@@ -1,0 +1,6 @@
+# Build artifacts
+treble_overlay_source/build/
+*.pyc
+__pycache__/
+.DS_Store
+*.log

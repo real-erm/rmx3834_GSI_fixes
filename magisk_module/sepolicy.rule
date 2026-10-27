@@ -1,0 +1,13 @@
+# com.spreadtrum.ims runs as priv_app on a GSI (no android.uid.phone sharedUserId).
+# It talks to the vendor RIL (rild) and Unisoc radio HALs; allow that.
+allow priv_app rild binder { call transfer }
+allow rild priv_app binder { call transfer }
+
+# Unisoc IMS radio HAL (HIDL + AIDL slots) and SRMI manager lookups
+allow priv_app hal_extRadio_hwservice hwservice_manager find
+allow priv_app ext_radio_service service_manager find
+allow priv_app default_android_service service_manager find
+
+# binder calls into the HAL processes that implement them
+allow priv_app hal_telephony_default binder { call transfer }
+allow hal_telephony_default priv_app binder { call transfer }

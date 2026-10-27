@@ -1,0 +1,52 @@
+# Realme Note 50 (RMX3834 / UMS9230) GSI Hardware Fixes
+# Generated from stock firmware backup (Android 15 / AP3A.240905.015.A2)
+
+# ==========================================================
+# 1. Display, Backlight & Brightness
+# ==========================================================
+# Realme Note 50 uses sprd_backlight (0 to 4095 scale).
+persist.sys.phh.backlight.scale=1
+persist.sys.qcom-brightness=4095
+persist.sys.phh.linear_brightness=true
+persist.sys.brightness.disable_gamma_conversion=true
+sys.brightness.disable_gamma_conversion=true
+persist.sys.phh.backlight.max=4095
+persist.sys.phh.backlight.min=1
+persist.vendor.brightness.doze=true
+
+# ==========================================================
+# 2. VoLTE, VoWiFi & Telephony (Unisoc UMS9230 / CP Modem)
+# ==========================================================
+persist.vendor.sys.single.imsstack=true
+persist.vendor.radio.tele.optimization=true
+persist.vendor.sys.volte.enable=true
+persist.vendor.radio.feature.bitmask=8
+persist.vendor.radio.sim.allfile=true
+ro.vendor.radio.modemtype=l
+ro.vendor.radio.fallback.enable=true
+ro.telephony.default_network=9
+persist.vendor.radio.phone_count=2
+persist.radio.multisim.config=dsds
+persist.ims.apn=ims
+
+# Force Wi-Fi Calling & VoLTE availability override in Android Telephony
+persist.sys.vowifi.whitelist=true
+persist.sys.vowifi.lab.sim=true
+persist.dbg.wfc_avail_ovr=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+
+# PHH / TrebleDroid IMS provider flavour
+persist.sys.phh.ims.flavour=unisoc
+persist.sys.phh.ims.unisoc=true
+
+# ==========================================================
+# 3. Camera & Auxiliary Lenses
+# ==========================================================
+persist.vendor.cam.multi.camera.enable=1
+persist.vendor.cam.res.multi.camera=RES_MULTI
+
+# ==========================================================
+# 4. Fingerprint Sensor
+# ==========================================================
+persist.vendor.fingerprint.sensor=gsl6163

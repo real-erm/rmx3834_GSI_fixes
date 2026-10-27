@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.phh.treble.overlay.realme.rmx3834"
+    platformBuildVersionCode="36"
+    platformBuildVersionName="16">
+    <application android:hasCode="false" android:extractNativeLibs="false" android:usesNonSdkApi="true"/>
+    <overlay
+        android:isStatic="true"
+        android:priority="250"
+        android:targetPackage="android"/>
+</manifest>

@@ -1,0 +1,21 @@
+#!/sbin/sh
+#################
+# Magisk Module Installer Script
+#################
+umask 022
+
+if [ -z "$OUTFD" ]; then
+    OUTFD=/proc/self/fd/$2
+    [ -e "$OUTFD" ] || OUTFD=/proc/self/fd/1
+fi
+
+ZIPFILE="$3"
+
+# Modern Magisk/KernelSU/APatch directly handles the zip when updater-script contains #MAGISK.
+# For direct script fallback:
+MODNAME="realme_note_50_gsi_fixes"
+MODPATH="/data/adb/modules/$MODNAME"
+mkdir -p "$MODPATH"
+unzip -o "$ZIPFILE" -x 'META-INF/*' -d "$MODPATH" >&2
+[ -f "$MODPATH/customize.sh" ] && . "$MODPATH/customize.sh"
+exit 0

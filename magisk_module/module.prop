@@ -1,0 +1,6 @@
+id=realme_note_50_gsi_fixes
+name=Realme Note 50 (RMX3834) GSI Hardware Fixes
+version=v1.0
+versionCode=1
+author=Antigravity
+description=Fixes Brightness curve (1-4095), VoLTE & VoWiFi calling (com.spreadtrum.ims stack + Unisoc CarrierConfig), 90Hz refresh rate, and multi-camera on Android GSIs.

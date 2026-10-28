@@ -11,3 +11,7 @@ allow priv_app default_android_service service_manager find
 # binder calls into the HAL processes that implement them
 allow priv_app hal_telephony_default binder { call transfer }
 allow hal_telephony_default priv_app binder { call transfer }
+
+# Allow IMS priv-app to set system properties without denial spin-loops
+allow priv_app property_socket sock_file write
+allow priv_app init unix_stream_socket connectto
